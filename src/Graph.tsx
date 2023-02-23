@@ -56,16 +56,11 @@ class Graph extends Component<IProps, {}> {
       elem.setAttribute('view','y_line');
       // elem.setAttribute('column-pivots','["stock"]');
       elem.setAttribute('row-pivots','["timestamp"]');
-      elem.setAttribute('columns','["ratio","lower_bound","upper_bound","trigger_alert"]');
-      elem.setAttribute('aggregates',JSON.stringify({
-        price_abc: 'avg',
-      price_def: 'avg',
-      ratio:'avg',
-      timestamp: 'distinct count',
-      under_bound:'avg',
-      lower_bound:'avg',
-      trigger_alert:'avg',
-      }));
+      elem.setAttribute('columns','["top_ask_price]');
+      elem.setAttribute('aggregates',`{ "stock":"distinct count",
+      "top_ask_price":"avg",
+      "top_bit_price":"avg",
+      "timestamp":"distinct count"}`);
       }
   }
 
